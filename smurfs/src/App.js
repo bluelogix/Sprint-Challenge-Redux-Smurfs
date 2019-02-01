@@ -26,9 +26,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
+        <h1 className="heading">SMURFS! 2.0 W/ Redux</h1>
+        
         <SmurfForm />
+        <div className="smurfBody">
         <SmurfList smurfs={this.props.smurfs} deleteSmurf={this.deleteSmurf} />
+        <img src='https://vignette.wikia.nocookie.net/sonypicturesanimation/images/0/04/Clumsy_smurfs_2_2017.png/revision/latest?cb=20170717001650' alt="smurf" width='50%' height='50%'/>
+        </div>
       </div>
     );
   }

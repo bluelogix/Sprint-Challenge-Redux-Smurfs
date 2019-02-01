@@ -32,9 +32,9 @@ class SmurfForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="form">
                 <form autoComplete="off" onSubmit={this.addNewSmurf}>
-
+                
                 <input 
                     value={this.state.name}
                     type='text'

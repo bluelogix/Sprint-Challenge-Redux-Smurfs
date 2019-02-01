@@ -3,7 +3,7 @@ import React from "react";
 
 const SmurfList = props => {
   return (
-    <ul>
+    <ul className="mapName">
       {props.smurfs.map(smurf => {
         return <Smurf  key={smurf.id} smurf={smurf} deleteSmurf={props.deleteSmurf} />;
       })}
