@@ -15,11 +15,11 @@ class SmurfForm extends React.Component {
          
     handleChanges = e => {
         // e.preventDefault();
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ ...this.state, [e.target.name]: e.target.value })
     }
 
     addNewSmurf = e => {
-        e.preventDefault();
+        // e.preventDefault();
         this.props.addSmurf(this.state)
         this.setState({
                 name: '',
