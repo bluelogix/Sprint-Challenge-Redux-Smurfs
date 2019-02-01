@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App';
+import App from './App';
 
 
 
@@ -11,10 +11,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 
-// const store = createStore(
-//   () => {}, // this is the most basic reducer. A function that returns and object. Replace it.
-//   applyMiddleware(/* be sure to throw in the proper middlewares here*/)
-// );
+
 
 const store = createStore(
   rootReducer,
