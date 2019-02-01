@@ -4,7 +4,13 @@
 import {
   SMURF_START,
   SMURF_SUCCESS,
-  SMURF_FAILURE
+  SMURF_FAILURE,
+  ADD_SMURF,
+  ADD_SUCCESS,
+  ADD_FAILURE,
+  DELETE_SMURF,
+  DELETE_SUCCESS,
+  DELETE_FAILURE
 }
 from '../actions';
 
@@ -12,12 +18,11 @@ from '../actions';
  const initialState = {
    smurfs: [],
    fetchingSmurfs: false,
-  //  addingSmurf: false,
+   addingSmurf: false,
+   error: null,
   //  updatingSmurf: false,
-  //  deletingSmurf: false,
-   error: null
+   deleteSmurf: false,
  }
-
 
 /*
   You'll only need one smurf reducer for this project.
@@ -46,6 +51,47 @@ const smurfReducer = ( state = initialState, action ) => {
             error: action.payload,
             fetchingSmurfs: false
           }
+          case ADD_SMURF:
+              return {
+                  ...state,
+                  // fetchingSmurfs: true,
+                  addingSmurf: true,
+              }
+        case ADD_SUCCESS:
+              return {
+                  ...state,
+                  fetchingSmurfs: false,
+                  addingSmurf: false,
+                  error: null,
+                  friends: action.payload
+                
+              }
+              case ADD_FAILURE:
+              return {
+                ...state,
+                error: action.payload,
+                addingSmurf: false,
+              }
+              case DELETE_SMURF:
+              return {
+                  ...state,
+                  deleteSmurf: true
+              }
+              case DELETE_SUCCESS:
+              return {
+                  ...state,
+                  fetchingSmurfs: false,
+                  error: null,
+                  smurfs: action.payload
+                
+              }
+              case DELETE_FAILURE:
+              return {
+                ...state,
+                error: action.payload,
+                fetchingSmurfs: false
+              }
+
           default:
             return state;
   }
